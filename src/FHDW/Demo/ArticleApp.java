@@ -1,6 +1,6 @@
-package Demo;
+package FHDW.Demo;
 
-import Models.Article;
+import FHDW.Models.Article;
 
 public class ArticleApp {
     public static void main(String[] args){

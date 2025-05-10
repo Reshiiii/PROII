@@ -1,4 +1,4 @@
-package Models;
+package FHDW.Models;
 
 public class Location {
     private String street;

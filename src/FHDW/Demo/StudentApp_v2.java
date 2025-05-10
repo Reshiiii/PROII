@@ -1,7 +1,7 @@
-package Demo;
+package FHDW.Demo;
 
-import Models.Location;
-import Models.Student;
+import FHDW.Models.Location;
+import FHDW.Models.Student;
 
 public class StudentApp_v2 {
     public static void main(String[] args){

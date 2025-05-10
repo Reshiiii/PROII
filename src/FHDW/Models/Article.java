@@ -1,4 +1,4 @@
-package Models;
+package FHDW.Models;
 
 public class Article {
     private long id;

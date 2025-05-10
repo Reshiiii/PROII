@@ -1,6 +1,6 @@
-package Demo;
+package FHDW.Demo;
 
-import Models.Student;
+import FHDW.Models.Student;
 
 public class StudentApp {
     public static void main(String[] args){

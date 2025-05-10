@@ -1,4 +1,4 @@
-package Models;
+package FHDW.Models;
 
 public class Student {
     final public static int FIRST_ID = 10001;
