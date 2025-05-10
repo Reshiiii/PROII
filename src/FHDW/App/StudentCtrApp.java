@@ -5,8 +5,8 @@ import FHDW.Utilities.*;
 
 public class StudentCtrApp {
     public static void main(String[] args){
-        Console.printlnMessage("Location App startet");
+        Console.printlnMessage("Student App startet");
         StudentCtr.runMainDialogue();
-        Console.printlnMessage("Location App beendet");
+        Console.printlnMessage("Student App beendet");
     }
 }
