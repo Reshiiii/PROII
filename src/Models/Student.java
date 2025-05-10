@@ -8,17 +8,20 @@ public class Student {
     private String name;
     private String firstName;
     private String lastName;
+    private Location location;
 
     public Student(){
 
     }
 
-    public Student(String firstName, String lastName) {
+    public Student(String firstName, String lastName, Location location) {
 
         this.id = getNextId();
 
         this.firstName = firstName;
         this.lastName = lastName;
+
+        this.location = location;
     }
 
     public Student(int id, String name) {
@@ -63,7 +66,10 @@ public class Student {
     }
 
     public String toString(){
-        return "ID: " + this.id + ", Vorname: " + this.firstName + ", Nachname: " + this.lastName;
+        return "ID: " + this.id
+                + ", Vorname: " + this.firstName
+                + ", Nachname: " + this.lastName
+                + this.location.toString();
     }
 
     private int getNextId(){

@@ -34,4 +34,10 @@ public class Location {
     public void setCity(String city) {
         this.city = city;
     }
+
+    public String toString(){
+        return " Straße: " + this.street
+                + " PLZ:" + this.zip
+                + " Stadt:" + this.city;
+    }
 }
