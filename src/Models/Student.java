@@ -1,12 +1,24 @@
 package Models;
 
 public class Student {
+    final public static int FIRST_ID = 10001;
+    final public static int LAST_ID = 99999;
+    public static int nextId = FIRST_ID;
     private int id;
     private String name;
     private String firstName;
     private String lastName;
 
-    public Student() {
+    public Student(){
+
+    }
+
+    public Student(String firstName, String lastName) {
+
+        this.id = getNextId();
+
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Student(int id, String name) {
@@ -15,7 +27,7 @@ public class Student {
     }
 
     public Student(int id, String firstName, String lastName) {
-        if (id > 10000 && id < 100000){
+        if (id >= FIRST_ID && id <= LAST_ID){
             this.id = id;
         }
         else{
@@ -52,6 +64,16 @@ public class Student {
 
     public String toString(){
         return "ID: " + this.id + ", Vorname: " + this.firstName + ", Nachname: " + this.lastName;
+    }
+
+    private int getNextId(){
+        if (nextId <= LAST_ID){
+            //nextId = nextId + 1
+            return nextId++;
+        }else{
+            return 0;
+        }
+
     }
 
 }
