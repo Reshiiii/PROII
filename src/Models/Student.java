@@ -76,4 +76,12 @@ public class Student {
 
     }
 
+    static public int getNoOfAvailableIds(){
+        return LAST_ID - nextId + 1;
+    }
+
+    static public int getNoOfAssignedIds(){
+        return nextId - FIRST_ID;
+    }
+
 }
