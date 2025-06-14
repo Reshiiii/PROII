@@ -28,18 +28,18 @@ public class StudentCtr {
         Console.startDialogueSection();
         if(student != null){
             for(boolean goOn = true; goOn;){
-                String choice = Console.readChoice("Edit Vorname", "Edit Nachname", "Edit Location", "Edit Subject", "Exit");
+                String choice = Console.readChoice("New Vorname", "New Nachname", "New Location", "New Subject", "Exit");
                 switch(choice){
-                    case "Edit Vorname":
+                    case "New Vorname":
                         student.setFirstName(Console.readString("Bitte neuen Vornamen eingeben: "));
                         break;
-                    case "Edit Nachname":
+                    case "New Nachname":
                         student.setLastName(Console.readString("Bitte neuen Nachnamen eingeben: "));
                         break;
-                    case "Edit Location":
+                    case "New Location":
                         LocationCtr.runEditDialogue(LocationCtr.runNewDialogue());
                         break;
-                    case "Edit Subject":
+                    case "New Subject":
                         Subject[] subjects = Subject.values();
                         int subjectNumber = Console.readInt("Enter Subject Number: ");
                         for(Subject subject: subjects){

@@ -8,22 +8,25 @@ public class Article {
     final public static int FIRST_ID = 100001;
     final public static int LAST_ID = 999999;
     public static int nextId = FIRST_ID;
+    private Unit unit;
 
     public Article() {
     }
 
-    public Article(long id, String name, float salePrice) {
+    public Article(long id, String name, float salePrice, Unit unit) {
         this.id = this.checkId(id);
         this.name = name;
         this.salePrice = salePrice;
         this.onStock = 0;
+        this.unit = unit;
     }
 
-    public Article(long id, String name, int onStock, float salePrice) {
+    public Article(long id, String name, int onStock, float salePrice, Unit unit) {
         this.id = this.checkId(id);
         this.name = name;
         this.onStock = onStock;
         this.salePrice = salePrice;
+        this.unit = unit;
     }
 
     public long getId() {
@@ -83,6 +86,14 @@ public class Article {
         return this.id == article.getId();
     }
 
+    public Unit getUnit(){
+        return this.unit;
+    }
+
+    public void setUnit (Unit unit){
+        this.unit = unit;
+    }
+
     public String toString(){
         //<Artikelbezeichnung< (<Artikelnummer>)
         //Bestand = <Bestand> Stück Preis
@@ -90,6 +101,7 @@ public class Article {
         return "Artikelnummer:" + this.getId()
                 + " Artikelbezeichnung:" + this.getName()
                 + " Bestand:" + this.getOnStock()
+                + " Einheit:" + this.getUnit()
                 + " Preis pro Stück:" + this.getSalePrice()
                 + " Lagerwert:" + this.getSalePrice()*this.onStock;
     }
