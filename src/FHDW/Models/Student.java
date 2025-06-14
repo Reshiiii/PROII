@@ -9,12 +9,13 @@ public class Student {
     private String firstName;
     private String lastName;
     private Location location;
+    private Subject subject;
 
     public Student(){
 
     }
 
-    public Student(String firstName, String lastName, Location location) {
+    public Student(String firstName, String lastName, Location location, Subject subject) {
 
         this.id = getNextId();
 
@@ -22,6 +23,7 @@ public class Student {
         this.lastName = lastName;
 
         this.location = location;
+        this.subject = subject;
     }
 
     public Student(int id, String name) {
@@ -85,7 +87,8 @@ public class Student {
         return "ID: " + this.id
                 + ", Vorname: " + this.firstName
                 + ", Nachname: " + this.lastName
-                + this.location.toString();
+                + ", Ort:" + this.location.toString()
+                + ", Fach" + this.subject.toString();
     }
 
     private int getNextId(){
@@ -96,6 +99,14 @@ public class Student {
             return 0;
         }
 
+    }
+
+    public Subject getSubject(){
+        return this.subject;
+    }
+
+    public void setSubject(Subject subject){
+        this.subject = subject;
     }
 
     static public int getNoOfAvailableIds(){

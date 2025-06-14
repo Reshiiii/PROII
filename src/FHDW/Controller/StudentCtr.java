@@ -1,5 +1,6 @@
 package FHDW.Controller;
 
+import FHDW.Models.Subject;
 import FHDW.Utilities.*;
 import FHDW.Models.Student;
 import FHDW.Models.Location;
@@ -12,7 +13,14 @@ public class StudentCtr {
         String lastName = Console.readString("Nachnamen eingeben: ");
         Location location = LocationCtr.runNewDialogue();
 
-        Student student = new Student(firstName, lastName, location);
+        Subject[] subjects = Subject.values();
+
+        int subjectNumber = Console.readInt("Enter Subject Number: ");
+        for(Subject subject: subjects){
+            Console.printlnMessage("(" + subject.ordinal() + ")" + subject.toString());
+        }
+
+        Student student = new Student(firstName, lastName, location, Subject.getSubject(subjectNumber));
         return student;
     }
 
@@ -20,16 +28,24 @@ public class StudentCtr {
         Console.startDialogueSection();
         if(student != null){
             for(boolean goOn = true; goOn;){
-                String choice = Console.readChoice("Neuer Vorname", "Neuer Nachname", "Neue Location", "Exit");
+                String choice = Console.readChoice("Edit Vorname", "Edit Nachname", "Edit Location", "Edit Subject", "Exit");
                 switch(choice){
-                    case "Neuer Vorname":
+                    case "Edit Vorname":
                         student.setFirstName(Console.readString("Bitte neuen Vornamen eingeben: "));
                         break;
-                    case "Neuer Nachname":
+                    case "Edit Nachname":
                         student.setLastName(Console.readString("Bitte neuen Nachnamen eingeben: "));
                         break;
-                    case "Neue Location":
+                    case "Edit Location":
                         LocationCtr.runEditDialogue(LocationCtr.runNewDialogue());
+                        break;
+                    case "Edit Subject":
+                        Subject[] subjects = Subject.values();
+                        int subjectNumber = Console.readInt("Enter Subject Number: ");
+                        for(Subject subject: subjects){
+                            Console.printlnMessage("(" + subject.ordinal() + ")" + subject.toString());
+                        }
+                        Subject subject = Subject.getSubject(subjectNumber);
                         break;
                     case "Exit":
                         goOn = false;

@@ -51,6 +51,7 @@ public enum Subject {
             if(j == i){
                 return subject;
             }
+            j++;
         }return Subject.NO_SUBJECT;
     }
 }
