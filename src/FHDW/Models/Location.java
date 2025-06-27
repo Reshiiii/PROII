@@ -36,8 +36,8 @@ public class Location {
     }
 
     public String toString(){
-        return " Straße: " + this.street
-                + " PLZ:" + this.zip
-                + " Stadt:" + this.city;
+        return " Straße = " + this.street
+                + " PLZ = " + this.zip
+                + " Stadt = " + this.city;
     }
 }

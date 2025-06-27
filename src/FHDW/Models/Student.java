@@ -1,45 +1,23 @@
 package FHDW.Models;
 
-public class Student {
+public class Student extends Person{
     final public static int FIRST_ID = 10001;
     final public static int LAST_ID = 99999;
     public static int nextId = FIRST_ID;
     private int id;
-    private String name;
     private String firstName;
     private String lastName;
-    private Location location;
     private Subject subject;
 
-    public Student(){
-
-    }
-
-    public Student(String firstName, String lastName, Location location, Subject subject) {
-
+    public Student(String name, Location location, Subject subject) {
+        super(name, location);
         this.id = getNextId();
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-
-        this.location = location;
         this.subject = subject;
     }
 
-    public Student(int id, String name) {
+    public Student(String name, int id, Location location){
+        super(name, location);
         this.id = id;
-        this.name = name;
-    }
-
-    public Student(int id, String firstName, String lastName) {
-        if (id >= FIRST_ID && id <= LAST_ID){
-            this.id = id;
-        }
-        else{
-            this.id = 0;
-        }
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -62,17 +40,11 @@ public class Student {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setName(String firstName, String lastName){
         this.firstName = firstName;
@@ -85,9 +57,8 @@ public class Student {
 
     public String toString(){
         return "ID: " + this.id
-                + ", Vorname: " + this.firstName
-                + ", Nachname: " + this.lastName
-                + ", Ort:" + this.location.toString()
+                + ", Name: " + super.getName()
+                + ", Ort:" + super.getResidence()
                 + ", Fach" + this.subject.toString();
     }
 

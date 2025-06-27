@@ -9,8 +9,7 @@ public class StudentCtr {
     public static Student runNewDialogue(){
         Console.startDialogueSection();
 
-        String firstName = Console.readString("Vornamen eingeben: ");
-        String lastName = Console.readString("Nachnamen eingeben: ");
+        String name = Console.readString("Namen eingeben: ");
         Location location = LocationCtr.runNewDialogue();
 
         Subject[] subjects = Subject.values();
@@ -20,7 +19,7 @@ public class StudentCtr {
             Console.printlnMessage("(" + subject.ordinal() + ")" + subject.toString());
         }
 
-        Student student = new Student(firstName, lastName, location, Subject.getSubject(subjectNumber));
+        Student student = new Student(name, location, Subject.getSubject(subjectNumber));
         return student;
     }
 

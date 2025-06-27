@@ -1,33 +1,14 @@
 package FHDW.Models;
 
-public class Tutor {
+public class Tutor extends Person{
     //eigentlich Lecturer
-    private String name;
-    private Location residence;
     private Role role;
     private Department department;
 
     public Tutor(String name, Location residence, Role role, Department department){
-        this.name = name;
-        this.residence = residence;
+        super(name, residence);
         this.role = role;
         this.department = department;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Location getResidence() {
-        return residence;
-    }
-
-    public void setResidence(Location residence) {
-        this.residence = residence;
     }
 
     public Role getRole() {
@@ -48,8 +29,8 @@ public class Tutor {
 
     public String toString() {
         return "Tutor{" +
-                "name='" + name + '\'' +
-                ", residence=" + residence +
+                "name='" + super.getName() + '\'' +
+                ", residence=" + super.getResidence() +
                 ", role=" + role +
                 ", department=" + department +
                 '}';

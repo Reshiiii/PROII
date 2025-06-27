@@ -34,7 +34,7 @@ public enum Department {
 
     public static Department getDepartment(int i){
         for(Department department: Department.values()){
-            if(role.ordinal() == i){
+            if(department.ordinal() == i){
                 return department;
             }
         }return NO_DEPARTMENT;
