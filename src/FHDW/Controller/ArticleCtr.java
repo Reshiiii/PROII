@@ -18,10 +18,11 @@ public class ArticleCtr {
 
 
         Unit[] units = Unit.values();
-        int unitNumber = Console.readInt("Enter Unit Number: ");
         for(Unit unit: units){
-            Console.printlnMessage("(" + unit.ordinal() + ")");
+            Console.printlnMessage("(" + unit.ordinal() + ")" + unit.toString());
         }
+        int unitNumber = Console.readInt("Enter Unit Number: ");
+
         Article article = new Article(id, name, onStock, salePrice, Unit.getUnit(unitNumber));
         return article;
     }
@@ -33,24 +34,24 @@ public class ArticleCtr {
                 String choice = Console.readChoice("Neue ID", "Neue Bezeichnung", "Neuer Lagerbestand", "Neue Einheit", "Neuer Preis", "Exit");
                 switch(choice){
                     case "Neue ID":
-                        article.setId(Console.readLong("Bitte neue ID eingeben: "));
+                        article.setId(Console.readLong("Bitte neue ID eingeben "));
                         break;
                     case "Neue Bezeichnung":
-                        article.setName(Console.readString("Bitte neue Bezeichnung eingeben: "));
+                        article.setName(Console.readString("Bitte neue Bezeichnung eingeben "));
                         break;
                     case "Neuer Lagerbestand":
-                        article.setOnStock(Console.readInt("Bitte neuen Lagerbestand eingeben: "));
+                        article.setOnStock(Console.readInt("Bitte neuen Lagerbestand eingeben "));
                         break;
                     case "Neue Einheit":
                         Unit[] units = Unit.values();
-                        int unitNumber = Console.readInt("Enter Unit Number: ");
+                        int unitNumber = Console.readInt("Enter Unit Number ");
                         for(Unit unit: units){
                             Console.printlnMessage("(" + unit.ordinal() + ")");
                         }
                         Unit unit = Unit.getUnit(unitNumber);
                         break;
                     case "Neuer Preis":
-                        article.setSalePrice(Console.readFloat("Bitte neuen Preis eingeben: "));
+                        article.setSalePrice(Console.readFloat("Bitte neuen Preis eingeben "));
                         break;
                     case "Exit":
                         goOn = false;

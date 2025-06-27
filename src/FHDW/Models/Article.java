@@ -29,6 +29,13 @@ public class Article {
         this.unit = unit;
     }
 
+    public static int getNextId(int id){
+        if (id <= LAST_ID && id >= FIRST_ID){
+            nextId ++;
+        }
+        return id;
+    }
+
     public long getId() {
         return id;
     }
